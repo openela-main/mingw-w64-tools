@@ -4,15 +4,17 @@
 #%%global branch trunk
 
 Name:           mingw-w64-tools
-Version:        10.0.0
+Version:        11.0.0
 Release:        2%{?dist}
 Summary:        Supplementary tools which are part of the mingw-w64 toolchain
 # Fix build on s390x and ppc64le
 Patch0:         mingw-w64-tools-s390x-ppc66le.patch
+# Fix build on riscv64, this patch can only be applied after mingw-w64-tools-s390x-ppc66le.patch
+Patch1:         mingw-w64-tools-riscv64-on-s390x-ppc66le.patch
 
 # http://sourceforge.net/mailarchive/forum.php?thread_name=5157C0FC.1010309%40users.sourceforge.net&forum_name=mingw-w64-public
 # The tools gendef and genidl are GPLv3+, widl is LGPLv2+
-License:        GPLv3+ and LGPLv2+
+License:        GPL-3.0-or-later AND LGPL-2.0-or-later
 
 URL:            http://mingw-w64.sourceforge.net/
 %if 0%{?snapshot_date}
@@ -106,6 +108,19 @@ popd
 
 
 %changelog
+* Mon Aug 7 2023 Konstantin Kostiuk <kkostiuk@redhat.com> - 11.0.0-2
+- Update license to SPDX format
+- Resolves: RHEL-1045
+
+* Sun Apr 30 2023 Sandro Mani <manisandro@gmail.com> - 11.0.0-1
+- Update to 11.0.0
+
+* Sun Feb 05 2023 Nianqing Yao <imbearchild@outlook.com> - 10.0.0-4
+- Fix build on riscv64.
+
+* Thu Jan 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 10.0.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild
+
 * Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 10.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
