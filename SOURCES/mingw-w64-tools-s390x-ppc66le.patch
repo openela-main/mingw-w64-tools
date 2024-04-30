@@ -1,6 +1,6 @@
-diff -rupN --no-dereference mingw-w64-v11.0.0/mingw-w64-tools/widl/include/basetsd.h mingw-w64-v11.0.0-new/mingw-w64-tools/widl/include/basetsd.h
---- mingw-w64-v11.0.0/mingw-w64-tools/widl/include/basetsd.h	2023-04-27 17:12:39.000000000 +0200
-+++ mingw-w64-v11.0.0-new/mingw-w64-tools/widl/include/basetsd.h	2023-04-30 18:49:11.600860037 +0200
+diff -rupN --no-dereference mingw-w64-v11.0.1/mingw-w64-tools/widl/include/basetsd.h mingw-w64-v11.0.1-new/mingw-w64-tools/widl/include/basetsd.h
+--- mingw-w64-v11.0.1/mingw-w64-tools/widl/include/basetsd.h	2023-04-29 11:15:30.000000000 +0200
++++ mingw-w64-v11.0.1-new/mingw-w64-tools/widl/include/basetsd.h	2023-08-17 12:36:09.203149051 +0200
 @@ -36,7 +36,7 @@ extern "C" {
   * 64-bit.
   */
@@ -19,9 +19,9 @@ diff -rupN --no-dereference mingw-w64-v11.0.0/mingw-w64-tools/widl/include/baset
  #elif !defined(RC_INVOKED) && !defined(__WIDL__) && !defined(__midl)
  # error Unknown CPU architecture!
  #endif
-diff -rupN --no-dereference mingw-w64-v11.0.0/mingw-w64-tools/widl/include/winnt.h mingw-w64-v11.0.0-new/mingw-w64-tools/widl/include/winnt.h
---- mingw-w64-v11.0.0/mingw-w64-tools/widl/include/winnt.h	2023-04-27 17:12:39.000000000 +0200
-+++ mingw-w64-v11.0.0-new/mingw-w64-tools/widl/include/winnt.h	2023-04-30 18:49:11.601860036 +0200
+diff -rupN --no-dereference mingw-w64-v11.0.1/mingw-w64-tools/widl/include/winnt.h mingw-w64-v11.0.1-new/mingw-w64-tools/widl/include/winnt.h
+--- mingw-w64-v11.0.1/mingw-w64-tools/widl/include/winnt.h	2023-04-29 11:15:30.000000000 +0200
++++ mingw-w64-v11.0.1-new/mingw-w64-tools/widl/include/winnt.h	2023-08-17 12:36:09.204149054 +0200
 @@ -1749,6 +1749,66 @@ typedef struct _KNONVOLATILE_CONTEXT_POI
  
  #endif /* __aarch64__ */
@@ -89,9 +89,9 @@ diff -rupN --no-dereference mingw-w64-v11.0.0/mingw-w64-tools/widl/include/winnt
  #if !defined(CONTEXT_FULL) && !defined(RC_INVOKED)
  #error You need to define a CONTEXT for your CPU
  #endif
-diff -rupN --no-dereference mingw-w64-v11.0.0/mingw-w64-tools/widl/tools.h mingw-w64-v11.0.0-new/mingw-w64-tools/widl/tools.h
---- mingw-w64-v11.0.0/mingw-w64-tools/widl/tools.h	2023-04-27 17:12:39.000000000 +0200
-+++ mingw-w64-v11.0.0-new/mingw-w64-tools/widl/tools.h	2023-04-30 18:49:11.601860036 +0200
+diff -rupN --no-dereference mingw-w64-v11.0.1/mingw-w64-tools/widl/tools.h mingw-w64-v11.0.1-new/mingw-w64-tools/widl/tools.h
+--- mingw-w64-v11.0.1/mingw-w64-tools/widl/tools.h	2023-04-29 11:15:30.000000000 +0200
++++ mingw-w64-v11.0.1-new/mingw-w64-tools/widl/tools.h	2023-08-17 12:36:09.204149054 +0200
 @@ -88,7 +88,7 @@
  
  struct target
