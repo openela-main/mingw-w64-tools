@@ -1,0 +1,21 @@
+diff -rupN --no-dereference mingw-w64-v12.0.0/mingw-w64-tools/widl/tools.h mingw-w64-v12.0.0-new/mingw-w64-tools/widl/tools.h
+--- mingw-w64-v12.0.0/mingw-w64-tools/widl/tools.h	2024-05-22 09:07:14.000000000 +0200
++++ mingw-w64-v12.0.0-new/mingw-w64-tools/widl/tools.h	2024-07-16 14:12:13.330779850 +0200
+@@ -90,7 +90,7 @@ extern char **environ;
+ 
+ struct target
+ {
+-    enum { CPU_i386, CPU_x86_64, CPU_ARM, CPU_ARM64, CPU_ARM64EC } cpu;
++  enum { CPU_i386, CPU_x86_64, CPU_ARM, CPU_ARM64, CPU_ARM64EC, CPU_UNSPECIFIED } cpu;
+ 
+     enum
+     {
+@@ -448,7 +448,7 @@ static inline struct target get_default_
+ #elif defined(__aarch64__)
+     target.cpu = CPU_ARM64;
+ #else
+-#error Unsupported CPU
++    target.cpu = CPU_UNSPECIFIED;
+ #endif
+ 
+ #ifdef __APPLE__

@@ -4,13 +4,16 @@
 #%%global branch trunk
 
 Name:           mingw-w64-tools
-Version:        11.0.1
-Release:        3%{?dist}
+Version:        12.0.0
+Release:        2%{?dist}
 Summary:        Supplementary tools which are part of the mingw-w64 toolchain
-# Fix build on s390x and ppc64le
-Patch0:         mingw-w64-tools-s390x-ppc66le.patch
-# Fix build on riscv64, this patch can only be applied after mingw-w64-tools-s390x-ppc66le.patch
-Patch1:         mingw-w64-tools-riscv64-on-s390x-ppc66le.patch
+# From Debian: Add missing CPU information (ia64, s390, s390x)
+Patch0:         widl-missing-cpu-info.patch
+# From Debian: Drop unused platform-specific context definitions
+Patch1:         widl-no-context.patch
+# From Debian: Don't error out on non-Windows CPUs
+Patch2:         widl-cpu.patch
+
 
 # http://sourceforge.net/mailarchive/forum.php?thread_name=5157C0FC.1010309%40users.sourceforge.net&forum_name=mingw-w64-public
 # The tools gendef and genidl are GPLv3+, widl is LGPLv2+
@@ -108,6 +111,12 @@ popd
 
 
 %changelog
+* Thu Jul 18 2024 Fedora Release Engineering <releng@fedoraproject.org> - 12.0.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
+* Tue Jul 16 2024 Sandro Mani <manisandro@gmail.com> - 12.0.0-1
+- Update to 12.0.0
+
 * Thu Jan 25 2024 Fedora Release Engineering <releng@fedoraproject.org> - 11.0.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
